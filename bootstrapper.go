@@ -1,6 +1,6 @@
 package piutils
 
-func BootStrap(logFile, errFile string) {
+func Configure(logFile, errFile string) {
 	InitLogger(logFile, errFile)
 	defer SugarLogger.Sync()
 }
