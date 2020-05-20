@@ -1,4 +1,4 @@
-package piutils
+package sjutils
 
 import (
 	"github.com/natefinch/lumberjack"

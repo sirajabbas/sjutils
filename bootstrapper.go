@@ -1,4 +1,4 @@
-package piutils
+package sjutils
 
 func Configure(logFile, errFile string) {
 	InitLogger(logFile, errFile)

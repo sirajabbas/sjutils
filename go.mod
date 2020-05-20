@@ -1,4 +1,4 @@
-module piutils
+module sjutils
 
 go 1.14
 
