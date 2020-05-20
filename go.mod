@@ -1,4 +1,4 @@
-module utilsgo
+module github.com/sirajabbas/utilsgo
 
 go 1.14
 
