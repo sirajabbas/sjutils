@@ -12,8 +12,8 @@ var SugarLogger *zap.SugaredLogger
 func InitLogger(logFileName, errFileName string) {
 	encoder := getEncoder()
 	core := zapcore.NewTee(
-		zapcore.NewCore(encoder, getLogWriter(logFileName), zap.ErrorLevel),
-		zapcore.NewCore(encoder, getLogWriter(errFileName), zap.InfoLevel),
+		zapcore.NewCore(encoder, getLogWriter(errFileName), zap.ErrorLevel),
+		zapcore.NewCore(encoder, getLogWriter(logFileName), zap.InfoLevel),
 		zapcore.NewCore(encoder, zapcore.AddSync(os.Stderr), zap.ErrorLevel),
 		zapcore.NewCore(encoder, zapcore.AddSync(os.Stdout), zap.DebugLevel),
 		//zapcore.NewCore(encoder, zapcore.AddSync(os.Stdout), zap.InfoLevel),
