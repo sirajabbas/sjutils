@@ -1,4 +1,4 @@
-package sjutils
+package utilsgo
 
 import (
 	"github.com/natefinch/lumberjack"

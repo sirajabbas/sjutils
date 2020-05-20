@@ -1,4 +1,4 @@
-package sjutils
+package utilsgo
 
 import (
 	"encoding/json"

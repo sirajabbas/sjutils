@@ -1,4 +1,4 @@
-package sjutils
+package utilsgo
 
 import (
 	"go.mongodb.org/mongo-driver/bson/primitive"

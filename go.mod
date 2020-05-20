@@ -1,4 +1,4 @@
-module sjutils
+module utilsgo
 
 go 1.14
 
