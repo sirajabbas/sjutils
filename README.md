@@ -15,6 +15,7 @@ utilsgo is a general purpose utility package for golang projects
   - pretty print (print struct in json format on console)
   - generate UUID
   - Extract seconds from time string
+  - File/Folder operations(Create/Delete)
 
 # Quickstart
     utilsgo.Bootstrap("info.log","err.log")
