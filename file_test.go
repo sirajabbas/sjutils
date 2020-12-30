@@ -31,3 +31,12 @@ func TestDeleteDirectory(t *testing.T) {
 		log.Fatal("Error executing DeleteDirectory", err)
 	}
 }
+
+func TestReadFilesFromDir(t *testing.T) {
+	path := "./test"
+	files, err := ReadFilesFromDir(path)
+	if err!=nil{
+		log.Fatal("Error reading files",err)
+	}
+	PrintPretty(files)
+}
