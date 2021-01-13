@@ -106,3 +106,31 @@ func FindCommonInSlice(set interface{}, subset interface{}) (common []interface{
 
 	return
 }
+
+func FindUnCommonInSlice(set interface{}, subset interface{}) (common []interface{}) {
+	switch reflect.TypeOf(set).Kind() {
+	case reflect.Slice:
+		var list []interface{}
+		var item interface{}
+		setValue := reflect.ValueOf(set)
+		subSetValue := reflect.ValueOf(subset)
+		for i := 0; i < setValue.Len(); i++ {
+			found := false
+			for j := 0; j < subSetValue.Len(); j++ {
+				//if setValue.Index(i) == subSetValue.Index(j) {
+				item = setValue.Index(i)
+				if setValue.Index(i).Interface() == subSetValue.Index(j).Interface() {
+					found = true
+					break
+				}
+			}
+			if found == false {
+				list = append(list, item)
+			}
+		}
+		common = list
+
+	}
+
+	return
+}

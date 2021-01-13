@@ -93,3 +93,10 @@ func TestFindCommonInSlice(t *testing.T) {
 	common1 := FindCommonInSlice(set1, subset1)
 	fmt.Println("common:", common1)
 }
+
+func TestFindUnCommonInSlice(t *testing.T) {
+	set := []string{"a", "b", "c", "d"}
+	subset := []string{"b", "d"}
+	uncommon := FindUnCommonInSlice(set, subset)
+	fmt.Println("uncommon:", uncommon)
+}
