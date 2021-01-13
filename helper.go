@@ -3,8 +3,9 @@ package utilsgo
 import (
 	"encoding/json"
 	"fmt"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"github.com/nu7hatch/gouuid"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"reflect"
 	"strconv"
 	"strings"
 )
@@ -77,4 +78,31 @@ func ExtractSecondsFromTimeString(t string) (op int, err error) {
 		op, err = strconv.Atoi(t)
 		return
 	}
+}
+
+func FindCommonInSlice(set interface{}, subset interface{}) (common []interface{}) {
+	switch reflect.TypeOf(set).Kind() {
+	case reflect.Slice:
+		var list []interface{}
+		var item interface{}
+		setValue := reflect.ValueOf(set)
+		subSetValue := reflect.ValueOf(subset)
+		for i := 0; i < setValue.Len(); i++ {
+			found := false
+			for j := 0; j < subSetValue.Len(); j++ {
+				//if setValue.Index(i) == subSetValue.Index(j) {
+				if setValue.Index(i).Interface() == subSetValue.Index(j).Interface() {
+					found = true
+					item = setValue.Index(i)
+				}
+			}
+			if found {
+				list = append(list, item)
+			}
+		}
+		common = list
+
+	}
+
+	return
 }

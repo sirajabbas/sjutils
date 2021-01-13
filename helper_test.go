@@ -1,6 +1,7 @@
 package utilsgo
 
 import (
+	"fmt"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"strconv"
 	"testing"
@@ -79,4 +80,16 @@ func TestExtractSecondsFromTimeString(t *testing.T) {
 	} else {
 		t.Log("seconds: ", s)
 	}
+}
+
+func TestFindCommonInSlice(t *testing.T) {
+	set := []string{"a", "b", "c", "d"}
+	subset := []string{"b", "d"}
+	common := FindCommonInSlice(set, subset)
+	fmt.Println("common:", common)
+
+	set1 := []int{1, 2, 4, 5, 6}
+	subset1 := []int{2, 4, 6}
+	common1 := FindCommonInSlice(set1, subset1)
+	fmt.Println("common:", common1)
 }
